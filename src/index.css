@@ -8,12 +8,12 @@ Done with a stop animation at the center location, and start on the right side, 
     padding:0;
  }
  
- body {
+ .app {
   font-family:'Poppins', sans-serif;
    display:grid;
    place-items:center;
    font-size:2.2em;
-   background-image:url(/pinkBlueBkg.jpg);
+   background-image:url(./assets/bkg2.jpg);
    background-position: center center;
    background-repeat:no-repeat;
    background-attachment:fixed;
@@ -26,8 +26,8 @@ Done with a stop animation at the center location, and start on the right side, 
  }
 
  h1 {
-  margin-top:1em;
-  color:rgba(0,0,0,.7)
+  margin-top:.08em;
+  color:rgba(240, 201, 201, 0.7)
   
  }
  
@@ -37,7 +37,7 @@ Done with a stop animation at the center location, and start on the right side, 
    place-items:center;
    margin-top:5%;
    width: 60vw;
-   height:60vh;
+   height:30rem;
    background: linear-gradient(
     to right bottom,
     rgba(255,255,255,0.4),
