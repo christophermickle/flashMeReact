@@ -36,16 +36,34 @@ function App() {
   const [frontDisplay, setFrontDisplay] = useState("Front of card");
   const [backDisplay, setBackDisplay] = useState("Back of card");
 
-  const randomCard = () => {
+
+  function cardSide() {
+  if (Math.random() <0.5) {
+      return 'front' } 
+      else { return 'back' } 
+}
+  const nextCard = () => {
+    const hiddenSide = cardSide();
     const randomIndex = Math.floor(Math.random() * deck.length);
     setCurrentCard(deck[randomIndex]);
-    setFrontDisplay(deck[randomIndex].front);
-    setBackDisplay(deck[randomIndex].back);
+    if (hiddenSide === 'front') {
+      setFrontDisplay(deck[randomIndex].front);
+      setBackDisplay("???");
+    } else {
+      setFrontDisplay("???");
+      setBackDisplay(deck[randomIndex].back);
+    }
   };
-  useEffect(() => {
-    randomCard();
-  }, []);
 
+  
+
+  const showAnswer = () => {
+    if (deck.length === 0) {alert('No cards in deck!')}
+    else {
+    setFrontDisplay(currentCard.front);
+    setBackDisplay(currentCard.back)}
+    nextCard();
+  };
   return (
     <div className='app'>
       <div className='wrapper'>
@@ -60,11 +78,11 @@ function App() {
             <p id='backDisplay'>{backDisplay}</p>
           </div>
           <div className='buttons'>
-            <button id='showAnswer'></button>
-            <button id='showModal' onClick={showModalHandler}>
+            <button type="button" id='showAnswer'onClick={showAnswer} ></button>
+            <button type="button" id='showModal' onClick={showModalHandler}>
               +
             </button>
-            <button id='nextCard'></button>
+            <button type="button" id='nextCard' onClick={nextCard}></button>
           </div>
         </main>
 
