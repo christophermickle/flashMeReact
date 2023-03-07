@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 
-const useLocalDeck = (initialDeck) => {
-  const [deck, setDeck] = useState(initialDeck);
+const useLocalDeck = () => {
+  const [deck, setDeck] = useState([]);
 
   useEffect(() => {
     const localDeck = localStorage.getItem("localDeck");
     if (localDeck) {
       try {
-        setDeck(JSON.parse(localDeck));
+        const parsedDeck = JSON.parse(localDeck);
+        setDeck(parsedDeck);
       } catch (error) {
         console.error("Failed to parse localDeck:", error);
         localStorage.removeItem("localDeck"); // remove the invalid item from storage
@@ -15,7 +16,7 @@ const useLocalDeck = (initialDeck) => {
     } else {
       localStorage.setItem("localDeck", JSON.stringify(deck));
     }
-  }, [deck]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("localDeck", JSON.stringify(deck));
