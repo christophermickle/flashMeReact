@@ -73,6 +73,16 @@ Done with a stop animation at the center location, and start on the right side, 
    border:none;
    width:20%;
    height:3.5em; 
+   cursor:pointer;
+}
+
+#showAnswer:hover, #nextCard:hover, #showModal:hover, #saveButton:hover, #closeModal:hover { 
+  background: linear-gradient(
+    to right bottom,
+    rgba(255,255,255,0.8),
+    rgba(255,255,255,0.6)
+   );
+   box-shadow: 3px 3px 15px 5px rgba(0,0,0,0.6);
 }
 
 #showAnswer {
