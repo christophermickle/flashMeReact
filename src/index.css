@@ -99,7 +99,7 @@ Done with a stop animation at the center location, and start on the right side, 
   display:none;
  }
  dialog { 
-  font-family: 'Bree Serif', serif;
+  font-family:'Poppins', sans-serif;
    margin:auto;
    width: 60vw;
    height:60vh;
@@ -109,7 +109,7 @@ Done with a stop animation at the center location, and start on the right side, 
  }
 
  dialog::backdrop { 
-  background-image:url(./assets/pinkBlueBkg.jpg);
+  background-image:url(./assets/bkg2.jpg);
    background-position: center center;
    background-repeat:no-repeat;
    background-attachment:fixed;
