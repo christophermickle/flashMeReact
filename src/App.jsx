@@ -96,7 +96,7 @@ function App() {
     e.preventDefault();
     modalRef.current.close();
   };
-//  onKeyDown handler, right arrow key = next card, spacebar = show answer using switch statement and making sure the modal isn't open and the deck isn't empty and a button isn't selected (focus) 
+  //  onKeyDown handler, right arrow key = next card, spacebar = show answer using switch statement and making sure the modal isn't open and the deck isn't empty and a button isn't selected (focus)
 
   const keyDownHandler = (e) => {
     if (modalRef.current.open) {
@@ -106,7 +106,8 @@ function App() {
       return;
     }
     if (e.target.tag === "BUTTON") {
-      return;}
+      return;
+    }
     switch (e.key) {
       case "ArrowRight":
         nextCard();
@@ -119,23 +120,26 @@ function App() {
     }
   };
   return (
-    <div className="app" onKeyDown={keyDownHandler}>
-      <div className="wrapper">
-        <h1 className="title">My Deck...</h1>
-        <main className="deckContainer">
-          <div className="card">
-            <p id="frontDisplay">{frontDisplay}</p>
-            <div className="borderBreak"></div>
-            <p id="backDisplay">{backDisplay}</p>
+    <div className='app' onKeyDown={keyDownHandler}>
+      <div className='wrapper'>
+        <h1 className='title'>My Deck...</h1>
+        <main className='deckContainer'>
+          <div className='card'>
+            <p id='frontDisplay'>{frontDisplay}</p>
+            <div className='borderBreak'></div>
+            <p id='backDisplay'>{backDisplay}</p>
           </div>
-          <div className="buttons">
-            <button type="button" id="showAnswer" onClick={showAnswer}>
+          <div className='buttons'>
+            <button type='button' id='showAnswer' onClick={showAnswer}>
               Show Answer
             </button>
-            <button type="button" id="showModal" onClick={showModalHandler}>
+            <button type='button' id='showModal' onClick={showModalHandler}>
               Add Card
             </button>
-            <button type='button' id='nextCard' onClick={nextCard}> Next Card</button>
+            <button type='button' id='nextCard' onClick={nextCard}>
+              {" "}
+              Next Card
+            </button>
           </div>
         </main>
 
@@ -144,7 +148,7 @@ function App() {
             <button id='closeModal' onClick={closeModalHandler}>
               X
             </button>
-            <input 
+            <input
               id='cardFrontText'
               name='cardFront'
               type='text'
@@ -155,7 +159,6 @@ function App() {
               }}
             />
             <input
-            
               id='cardBackText'
               name='cardBack'
               type='text'
