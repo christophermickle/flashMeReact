@@ -136,11 +136,7 @@ function App() {
             <button type='button' id='showModal' onClick={showModalHandler}>
               Add Card
             </button>
-<<<<<<< HEAD
             <button type="button" id="nextCard" onClick={nextCard}>
-=======
-            <button type='button' id='nextCard' onClick={nextCard}>
->>>>>>> 98dd7a250a2904bc88f19441dba0de68619c07d3
               {" "}
               Next Card
             </button>
@@ -152,36 +148,21 @@ function App() {
             <button id="closeModal" onClick={closeModalHandler}>
               X
             </button>
-<<<<<<< HEAD
-            <input class="bg-slate-200"
-              id="cardFrontText"
-              name="cardFront"
-              type="text"
-              placeholder="Front of card"
-=======
             <input
               id='cardFrontText'
               name='cardFront'
               type='text'
               placeholder='Front of card'
->>>>>>> 98dd7a250a2904bc88f19441dba0de68619c07d3
               value={cardFront}
               onChange={(e) => {
                 setCardFront(e.target.value);
               }}
             />
             <input
-<<<<<<< HEAD
-              id="cardBackText"
-              name="cardBack"
-              type="text"
-              placeholder="Back of card"
-=======
               id='cardBackText'
               name='cardBack'
               type='text'
               placeholder='Back of card'
->>>>>>> 98dd7a250a2904bc88f19441dba0de68619c07d3
               value={cardBack}
               onChange={(e) => {
                 setCardBack(e.target.value);
