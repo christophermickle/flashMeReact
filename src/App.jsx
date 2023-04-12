@@ -96,7 +96,7 @@ function App() {
     e.preventDefault();
     modalRef.current.close();
   };
-//  onKeyDown handler, right arrow key = next card, spacebar = show answer using switch statement and making sure the modal isn't open and the deck isn't empty and a button isn't selected (focus) 
+  //  onKeyDown handler, right arrow key = next card, spacebar = show answer using switch statement and making sure the modal isn't open and the deck isn't empty and a button isn't selected (focus)
 
   const keyDownHandler = (e) => {
     if (modalRef.current.open) {
@@ -106,7 +106,8 @@ function App() {
       return;
     }
     if (e.target.tag === "BUTTON") {
-      return;}
+      return;
+    }
     switch (e.key) {
       case "ArrowRight":
         nextCard();
@@ -135,37 +136,39 @@ function App() {
             <button type="button" id="showModal" onClick={showModalHandler}>
               Add Card
             </button>
-            <button type='button' id='nextCard' onClick={nextCard}> Next Card</button>
+            <button type="button" id="nextCard" onClick={nextCard}>
+              {" "}
+              Next Card
+            </button>
           </div>
         </main>
 
-        <dialog ref={modalRef} onKeyDown={enterHandler} id='newCardModal'>
-          <form className='newCardWrapper'>
-            <button id='closeModal' onClick={closeModalHandler}>
+        <dialog ref={modalRef} onKeyDown={enterHandler} id="newCardModal">
+          <form className="newCardWrapper">
+            <button id="closeModal" onClick={closeModalHandler}>
               X
             </button>
-            <input 
-              id='cardFrontText'
-              name='cardFront'
-              type='text'
-              placeholder='Front of card'
+            <input class="bg-slate-200"
+              id="cardFrontText"
+              name="cardFront"
+              type="text"
+              placeholder="Front of card"
               value={cardFront}
               onChange={(e) => {
                 setCardFront(e.target.value);
               }}
             />
             <input
-            
-              id='cardBackText'
-              name='cardBack'
-              type='text'
-              placeholder='Back of card'
+              id="cardBackText"
+              name="cardBack"
+              type="text"
+              placeholder="Back of card"
               value={cardBack}
               onChange={(e) => {
                 setCardBack(e.target.value);
               }}
             />
-            <button onClick={addCard} id='saveButton'>
+            <button onClick={addCard} id="saveButton">
               Save card
             </button>
           </form>
