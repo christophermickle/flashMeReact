@@ -120,11 +120,11 @@ function App() {
     }
   };
   return (
-    <div className='app' onKeyDown={keyDownHandler}>
+    <div className='app w-screen min-h-screen' onKeyDown={keyDownHandler}>
       <div className='wrapper'>
         <h1 className='title'>My Deck...</h1>
         <main className='deckContainer'>
-          <div className='card'>
+          <div className='card '>
             <p id='frontDisplay'>{frontDisplay}</p>
             <div className='borderBreak'></div>
             <p id='backDisplay'>{backDisplay}</p>
