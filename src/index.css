@@ -178,12 +178,19 @@ dialog::backdrop {
     }
   }
 }
-
-
+.html-deck {
+  height:5em;
+  padding-left:2em;
+  padding-right:2em;
+}
+.title {
+ width:100%;
+ inset:0;
+}
 .deckContainer {
 position:absolute;
 bottom:0;
 margin-inline:auto;
 left:23vw;
-margin-bottom:2em;  
+margin-bottom:2em;
 }
